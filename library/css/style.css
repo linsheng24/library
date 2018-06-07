@@ -1,0 +1,35 @@
+*{
+  font-family:微軟正黑體;
+  font-size: 40px;
+  background-color: #BBFFEE;
+  margin:0px auto;
+  text-align: center;
+}
+
+.text{
+  background-color: #77FFEE;
+  border-radius: 10px;
+  padding: 15px 150px;
+}
+div{
+  display: inline-block;
+  
+}
+.button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px 250px;
+  border: solid 2px ;
+  border-color:  #5599FF #0066FF	#0066FF #5599FF;
+  border-radius: 10px;
+  font-size: 30px;
+  color: #FFFFFF;
+  background-color: #5599EA
+}
+.back{
+  padding: 15px 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: #CCEEFF;
+}
