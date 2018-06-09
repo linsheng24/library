@@ -1,6 +1,4 @@
 <?php
-require_once("../lib/dbconfig.php");
-
 
 $db=new PDO("mysql:host=localhost;
 dbname=".$dsn, $user, $password,
@@ -29,16 +27,16 @@ else{
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>逾期查詢</title>
 </head>
-<body>
+<body style="font-size:30">
 <?php for($i=0;$i<count($row1);$i++){ ?>    
 <div>
     借書證卡號: <?php echo $row1[$i]['BookId']; ?><br>
     書名: <?php echo $row1[$i]['Title']; ?><br>
     分館代號: <?php echo $row1[$i]['BranchId']; ?><br>
     狀態: <?php echo '已過期'; ?><br>
-    <hr>
+    <hr><br>
 </div>
 <?php } ?>
 

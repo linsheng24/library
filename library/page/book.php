@@ -1,7 +1,6 @@
 <?php
-session_start();
 if($_SESSION['pv'] != 1){
-    header("Location:../");
+    header("Location:./");
 }
 
 ?>
@@ -16,7 +15,7 @@ if($_SESSION['pv'] != 1){
   
   
   
-      <link rel="stylesheet" href="../css/style.css">
+      <link rel="stylesheet" href="./css/style.css">
 
   
 </head>
@@ -29,13 +28,13 @@ if($_SESSION['pv'] != 1){
 書籍ID:<br/> <input class="text" type="text" name="bookId" ><br/>
 分館ID:<br/> <input class="text" type="text" name="branch" ><br/>
 數量:<br/> <input class="text" type="text" name="ammount" ><br/>
-<input class='button' type ="button" onclick="go('../php/delBook.php');" value="刪除書籍"></input><br>
-<input class='button' type ="button" onclick="go('../php/addBook.php');" value="添加書籍"></input><br>
+<input class='button' type ="button" onclick="go('./delBook');" value="刪除書籍"></input><br>
+<input class='button' type ="button" onclick="go('./addBook');" value="添加書籍"></input><br>
 
 <hr>
 
 新分館代號:<br/> <input class="text" type="text" name="newbranch" ><br/>
-<input class='button' type ="button" onclick="go('../php/moveBook.php');" value="轉移分館"></input><br>
+<input class='button' type ="button" onclick="go('./moveBook');" value="轉移分館"></input><br>
 
 <hr><input class='back' type ="button" onclick="history.back();" value="上一頁"></input><br>
 

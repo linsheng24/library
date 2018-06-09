@@ -1,5 +1,4 @@
 <?php
-require_once("../lib/dbconfig.php");
 
 $db=new PDO("mysql:host=localhost;
 dbname=".$dsn, $user, $password,
@@ -16,7 +15,7 @@ $row1 = $find->fetch(PDO::FETCH_ASSOC);
 
 if(!$row1){
     echo '無此書目紀錄';
-    header("refresh:3,url=../");
+    header("refresh:3,url=./");
 }
 
 else{
@@ -41,24 +40,32 @@ else{
             throw new Exception('更新步驟錯誤');
         }
 
-}
+        $sql =" DELETE FROM book_copies WHERE No_Of_Copies<1";
+        $delete = $db->prepare($sql);
+        $row3 = $delete->execute();
+        $db->commit();
+        header("refresh:3,url=./");
+        echo "刪除完成";
 
-$sql =" DELETE FROM book_copies WHERE No_Of_Copies<1";
-
-$delete = $db->prepare($sql);
-$row3 = $delete->execute();
-
-$db->commit();
-
-
-header("refresh:3,url=../");
-echo "刪除完成";
+    }
 }
 
 catch (Exception $e){
     $db->rollBack();
     echo $e->getMessage();
-    header("refresh:3,url=../");
+    header("refresh:3,url=./");
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>加入書籍</title>
+</head>
+<body>
+</body>
+</html>

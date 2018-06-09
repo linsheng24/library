@@ -1,5 +1,4 @@
 <?php
-require_once("../../lib/dbconfig.php");
 
 $db=new PDO("mysql:host=localhost;
                 dbname=".$dsn, $user, $password,
@@ -18,12 +17,11 @@ echo "登入失敗，三秒後轉跳登入頁面";
 else
 {
 echo "登入成功，三秒後轉跳主頁面";
-session_start();
 $_SESSION['username'] = $_POST['id'];
 $_SESSION['pv'] = $row['admin'];
 
 }
-header("refresh:3,url=../../");
+header("refresh:3,url=./");
 
 ?>
                 

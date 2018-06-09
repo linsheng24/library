@@ -1,0 +1,13 @@
+{
+    "name": "linsheng/library",
+    "description": "A simple library system",
+    "require": {
+    },
+
+    "autoload":{
+        "classmap": [
+            "lib"
+        ]
+    }
+}
+

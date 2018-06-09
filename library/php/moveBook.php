@@ -1,5 +1,5 @@
 <?php
-require_once("../lib/dbconfig.php");
+
 
 $db=new PDO("mysql:host=localhost;
 dbname=".$dsn, $user, $password,
@@ -16,7 +16,7 @@ try{
 
     if(!$row1){
         echo '本館無此書目';
-        header("refresh:3,url=../");
+        header("refresh:3,url=./");
     }
 
     else{
@@ -86,7 +86,7 @@ try{
 
     $db->commit();
     echo "轉移完成";
-    header("refresh:3,url=../");
+    header("refresh:3,url=./");
     }
 
 
@@ -100,3 +100,16 @@ catch (Exception $e){
 }
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>遷移書籍</title>
+</head>
+<body>
+</body>
+</html>

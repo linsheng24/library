@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     
     <title>註冊頁面</title>
 </head>
 <body>
     <div>
-    <form action="regist.php" method="post">
+    <form action="./regist" method="post">
         卡號<br> <input class="text" type="text" name="cardNo" id="cardNo" ><br><hr>
         密碼<br> <input class="text" type="password" name="pass" id="pass"><br><hr>
         姓名<br> <input class="text" type="text" name="name" id="name" ><br><hr>
@@ -36,7 +36,7 @@
 
 <?php
 
-require_once("../../lib/dbconfig.php");
+
 if(isset($_POST['cardNo'])){
 $db=new PDO("mysql:host=localhost;
                 dbname=".$dsn, $user, $password,
@@ -75,7 +75,7 @@ else{
     throw new Exception('error regist');
 }
 $db->commit();
-header("refresh:0.5,url=../../");
+header("refresh:0.5,url=./");
 
 }
 catch (Exception $e){
